@@ -33,6 +33,9 @@ for plugin in $PLUGINS_LIST; do
   java -jar jenkins-cli.jar -s http://localhost:$JENKINS_PORT/ install-plugin $plugin
 done
 
+# Install Maven
+docker exec -u root jenkins  bash -c "apt-get update && apt-get install -y maven"
+
 # Restart Jenkins to apply plugins
 java -jar jenkins-cli.jar -s http://localhost:$JENKINS_PORT/ safe-restart
 
