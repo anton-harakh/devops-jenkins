@@ -15,7 +15,7 @@ jobs:
       - name: Run yamllint
         uses: ibiqlik/action-yamllint@v3
         with:
-          file_or_dir: '**/*.yml'
+          file_or_dir: '.'
           strict: true
           config_file: .github/workflows/.yamllint.yaml
         env:
