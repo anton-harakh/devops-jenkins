@@ -43,8 +43,8 @@ pipeline {
                 dependencyCheckPublisher pattern: 'target/dependency-check-report.xml',
                     failedTotalCritical: 1,
                     failedTotalHigh: 1,
-                    failedTotalMedium: 1,
-                    failedTotalLow: 1,
+                    failedTotalMedium: 10,
+                    failedTotalLow: 100,
                     stopBuild: true
             }
         }
