@@ -17,6 +17,6 @@ jobs:
         with:
           file_or_dir: '**/*.yml'
           strict: true
-          config_file: .github/workflows/.yamllint.yml
+          config_file: .github/workflows/.yamllint.yaml
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
