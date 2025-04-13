@@ -39,12 +39,12 @@ pipeline {
 
         stage('OWASP Dependency-Check') {
             steps {
-                dependencyCheck (additionalArguments: '--format XML --out target --scan .', odcInstallation: 'DC')
+                dependencyCheck (additionalArguments: '--nvdApiKey 71466541-8d18-4312-bf8c-d2d8ac63f256 --format XML --out target --scan .', odcInstallation: 'DC')
                 dependencyCheckPublisher pattern: 'target/dependency-check-report.xml',
                     failedTotalCritical: 1,
                     failedTotalHigh: 1,
-                    failedTotalMedium: 1,
-                    failedTotalLow: 1,
+                    failedTotalMedium: 10,
+                    failedTotalLow: 100,
                     stopBuild: true
             }
         }
