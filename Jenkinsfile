@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+          MAVEN_OPTS = '-Xmx2048m' // Adjust based on available system memory
+    }
+
     tools {
         maven 'Maven 3.8.7' // Adjust to your Maven installation
         jdk 'JDK 17'        // Adjust to your JDK installation
