@@ -18,7 +18,6 @@ jobs:
         with:
           file_or_dir: '**/*.yml'
           strict: true
-          yamllint_comment: true
           config_file: .yamllint.yml
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
