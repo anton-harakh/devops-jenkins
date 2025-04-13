@@ -35,7 +35,7 @@ pipeline {
 
         stage('OWASP Dependency-Check') {
             steps {
-                dependencyCheck additionalArguments: '--format XML --out target --scan .' odcInstallation: 'DC'
+                dependencyCheck (additionalArguments: '--format XML --out target --scan .', odcInstallation: 'DC')
                 dependencyCheckPublisher pattern: 'target/dependency-check-report.xml',
                     failedTotalCritical: 1,
                     failedTotalHigh: 1,
