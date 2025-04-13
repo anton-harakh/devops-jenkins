@@ -17,6 +17,7 @@ docker run -d \
   --name $JENKINS_CONTAINER_NAME \
   -p $JENKINS_PORT:8080 \
   -p $JENKINS_SLAVE_PORT:50000 \
+  -e JAVA_OPTS="-Xms512m -Xmx2048m" \
   -v $JENKINS_HOME_VOLUME:/var/jenkins_home \
   $JENKINS_IMAGE
 
