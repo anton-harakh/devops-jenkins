@@ -25,7 +25,7 @@ pipeline {
 
         stage('Checkstyle Analysis') {
             steps {
-                sh 'mvn checkstyle:checkstyle'
+                sh 'mvn checkstyle:check'
                 recordIssues tools: [checkStyle(pattern: '**/target/checkstyle-result.xml')], failOnError: true
             }
         }
